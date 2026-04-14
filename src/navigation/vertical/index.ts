@@ -1,0 +1,71 @@
+export default [
+  {
+    title: 'Home',
+    to: { name: 'root' },
+    icon: { icon: 'tabler-smart-home' },
+    allowedRoles: [1],
+  },
+  { heading: 'Inventario' },
+  {
+    title: 'Categorias',
+    to: { name: 'CategoryList' },
+    icon: { icon: 'tabler-category' },
+    allowedRoles: [1, 2],
+  },
+  {
+    title: 'Productos',
+    to: { name: 'ProductList' },
+    icon: { icon: 'tabler-barcode' },
+    allowedRoles: [1, 2],
+  },
+  { heading: 'Administrativo' },
+  {
+    title: 'Clientes',
+    to: { name: 'CustomerList' },
+    icon: { icon: 'tabler-users' },
+    allowedRoles: [1, 2],
+  },
+  {
+    title: 'Almacenes',
+    to: { name: 'WarehouseList' },
+    icon: { icon: 'tabler-building-store' },
+    allowedRoles: [1, 2],
+  },
+  {
+    title: 'Vales',
+    to: { name: 'TicketsList' },
+    icon: { icon: 'tabler-ticket' },
+    allowedRoles: [1],
+  },
+  {
+    title: 'Gastos',
+    to: { name: 'ExpensesList' },
+    icon: { icon: 'tabler-cash-banknote' },
+    allowedRoles: [1, 2],
+  },
+  { heading: 'Ventas y Operaciones' },
+  {
+    title: 'Cotizaciones',
+    to: { name: 'QuotesList' },
+    icon: { icon: 'tabler-file-invoice' },
+    allowedRoles: [1, 2, 3],
+  },
+  {
+    title: 'Facturas',
+    to: { name: 'InvoicesList' },
+    icon: { icon: 'tabler-receipt-2' },
+    allowedRoles: [1, 2],
+  },
+  {
+    title: 'Manifiestos',
+    to: { name: 'Manifests' },
+    icon: { icon: 'tabler-notes' },
+    allowedRoles: [1, 2],
+  },
+  { heading: 'Cuenta' },
+  {
+    title: 'Gestionar Contraseña',
+    to: { name: 'ChangePassword' },
+    icon: { icon: 'tabler-key' },
+  },
+]

@@ -1,0 +1,229 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import CategoryDrawer from './components/CategoryDrawer.vue'
+import { $api } from '@/utils/api'
+
+definePage({
+  name: 'CategoryList',
+})
+
+// Data tables logic
+const searchQuery = ref('')
+const totalData = ref(0)
+
+interface CategoryItem {
+  id: number
+  nombre: string
+  descripcion: string
+  estado: number
+  [key: string]: any
+}
+
+const tableData = ref<CategoryItem[]>([])
+const isLoading = ref(false)
+
+// Pagination logic
+const options = ref({ page: 1, itemsPerPage: 50, sortBy: [], groupBy: [], search: undefined })
+const itemsPerPageOptions = [50, 100, 150, 200, 500]
+
+// Headers for DataTable
+const headers = [
+  { title: 'Nombre', key: 'nombre' },
+  { title: 'Descripción', key: 'descripcion' },
+  { title: 'Estado', key: 'estado' },
+  { title: 'Acciones', key: 'actions', sortable: false },
+]
+
+// Drawer logic
+interface CategoryData {
+  nombre: string
+  descripcion: string
+  estado: boolean
+}
+const isDrawerOpen = ref(false)
+const editingCategoryId = ref<number | null>(null)
+const editingData = ref<CategoryData>({ nombre: '', descripcion: '', estado: true })
+
+const fetchCategories = async () => {
+  isLoading.value = true
+  try {
+    let endpoint = '/categorie'
+    let params: any = {
+      size: options.value.itemsPerPage,
+      page: options.value.page
+    }
+
+    if (searchQuery.value) {
+      endpoint = '/categorie/categorie-search'
+      params.input = searchQuery.value
+    }
+
+    const response = await $api<{ data: any, per_page: number, total: number }>(endpoint, { params })
+    
+    // Adjust mapping based on search response format vs normal get format from original code
+    if (searchQuery.value) {
+      tableData.value = response.data || []
+      options.value.itemsPerPage = response.per_page || 50
+      totalData.value = response.total || 0
+    } else {
+      tableData.value = response.data?.data || []
+      options.value.itemsPerPage = response.data?.per_page || 50
+      totalData.value = response.data?.total || 0
+    }
+  } catch (error) {
+    console.error(error)
+  } finally {
+    isLoading.value = false
+  }
+}
+
+// Actions
+const openAddDrawer = () => {
+  editingCategoryId.value = null
+  editingData.value = { nombre: '', descripcion: '', estado: true }
+  isDrawerOpen.value = true
+}
+
+const editCategory = async (id: number) => {
+  try {
+    // We could use API to get item by ID, or simply use local row data if it has all info
+    const response = await $api<any>(`/categorie/${id}`)
+    editingCategoryId.value = id
+    editingData.value = {
+      nombre: response.nombre,
+      descripcion: response.descripcion,
+      estado: response.estado === 1,
+    }
+    isDrawerOpen.value = true
+  } catch (error) {
+    console.error('Error fetching category', error)
+  }
+}
+
+const deleteCategory = async (id: number) => {
+  const isConfirmed = window.confirm('¿Está seguro que desea eliminar este registro?')
+  if (!isConfirmed) return
+
+  try {
+    await $api(`/categorie/${id}`, { method: 'DELETE' })
+    fetchCategories()
+  } catch (error) {
+    console.error('Error deleting category', error)
+    alert('Error al eliminar categoría')
+  }
+}
+
+const onDrawerSubmit = async (data: any, id?: number | null) => {
+  const payload = {
+    ...data,
+    estado: data.estado ? 1 : 0
+  }
+
+  try {
+    if (id) {
+      await $api(`/categorie/${id}`, { method: 'PUT', body: payload })
+    } else {
+      await $api('/categorie', { method: 'POST', body: payload })
+    }
+    isDrawerOpen.value = false
+    fetchCategories()
+  } catch (error) {
+    console.error('Error saving category', error)
+    alert('Error al guardar la categoría')
+  }
+}
+
+// Watchers and lifecycle hooks
+watch([() => options.value.page, () => options.value.itemsPerPage], () => {
+  fetchCategories()
+})
+
+const onSearch = () => {
+  options.value.page = 1
+  fetchCategories()
+}
+
+onMounted(() => {
+  fetchCategories()
+})
+</script>
+
+<template>
+  <VCard title="Gestión de Categorías">
+    <VCardText class="d-flex flex-wrap gap-4 align-center justify-space-between">
+      <div class="d-flex align-center gap-4">
+        <div style="width: 250px;">
+          <VTextField
+            v-model="searchQuery"
+            placeholder="Buscar..."
+            density="compact"
+            hide-details
+            prepend-inner-icon="tabler-search"
+            @keyup.enter="onSearch"
+          />
+        </div>
+        <VBtn
+          color="primary"
+          @click="onSearch"
+        >
+          Buscar
+        </VBtn>
+      </div>
+
+      <VBtn
+        color="primary"
+        prepend-icon="tabler-plus"
+        @click="openAddDrawer"
+      >
+        Crear Categoría
+      </VBtn>
+    </VCardText>
+
+    <VDataTableServer
+      v-model:items-per-page="options.itemsPerPage"
+      v-model:page="options.page"
+      :headers="headers"
+      :items="tableData"
+      :items-length="totalData"
+      :loading="isLoading"
+      :items-per-page-options="itemsPerPageOptions"
+      class="text-no-wrap"
+      @update:options="options = $event"
+    >
+      <template #item.estado="{ item }">
+        <VChip
+          :color="item.estado === 1 ? 'success' : 'error'"
+          size="small"
+        >
+          {{ item.estado === 1 ? 'Activo' : 'Inactivo' }}
+        </VChip>
+      </template>
+
+      <template #item.actions="{ item }">
+        <div class="d-flex gap-1">
+          <IconBtn @click="editCategory(item.id)">
+            <VIcon icon="tabler-pencil" />
+          </IconBtn>
+          <IconBtn @click="deleteCategory(item.id)">
+            <VIcon icon="tabler-trash" color="error" />
+          </IconBtn>
+        </div>
+      </template>
+
+      <!-- empty state -->
+      <template #no-data>
+        <div class="text-center text-body-1 py-4">
+          No hay datos disponibles
+        </div>
+      </template>
+    </VDataTableServer>
+
+    <!-- Drawer -->
+    <CategoryDrawer
+      v-model:is-drawer-open="isDrawerOpen"
+      :editing-category-id="editingCategoryId"
+      :initial-data="editingData"
+      @submit="onDrawerSubmit"
+    />
+  </VCard>
+</template>
