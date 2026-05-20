@@ -1,1 +1,19 @@
 // Write your overrides
+
+// ==========================================
+// AVATAR BRAND COLOR ENFORCEMENT (TECHLOVERS)
+// ==========================================
+.v-avatar {
+  /* Enforce brand primary color on all textual, tonal, and outline avatars */
+  color: rgb(var(--v-theme-primary)) !important;
+
+  /* Enforce brand primary color natively over standard Vuetify backgrounds */
+  &.bg-success,
+  &.bg-error,
+  &.bg-warning,
+  &.bg-info,
+  &.bg-secondary {
+    background-color: rgb(var(--v-theme-primary)) !important;
+    color: rgb(var(--v-theme-on-primary)) !important;
+  }
+}

@@ -246,7 +246,7 @@ onMounted(() => {
             <div class="d-flex align-center">
               <VAvatar
                 size="32"
-                color="error"
+                color="primary"
                 variant="tonal"
                 class="mr-3"
               >
@@ -311,7 +311,7 @@ onMounted(() => {
   <AppConfirmDialog
     ref="confirmDialog"
     title="¿Eliminar Cliente?"
-    message="¡Esta acción no se puede deshacer! ¿Estás completamente seguro de borrar a este cliente de la base de datos de Zabal Store?"
+    message="¡Esta acción no se puede deshacer! ¿Estás completamente seguro de borrar a este cliente de la base de datos de Techlovers Store?"
     @confirm="executeDeleteClient"
   />
 

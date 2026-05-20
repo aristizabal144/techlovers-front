@@ -1,7 +1,7 @@
 import type { ThemeDefinition } from 'vuetify'
 
-export const staticPrimaryColor = '#AE3839' // Exact Zabal Brand Red
-export const staticPrimaryDarkenColor = '#8C2D2E' // Darker shade for hover states
+export const staticPrimaryColor = '#331791' // Exact Techlovers Brand Purple
+export const staticPrimaryDarkenColor = '#241065' // Darker shade for hover states
 
 export const themes: Record<string, ThemeDefinition> = {
   light: {

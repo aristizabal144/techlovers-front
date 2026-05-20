@@ -244,30 +244,30 @@ const executePrint = () => {
     <style>body{font-family:Arial,sans-serif;color:#333;margin:0;padding:20px}
     @media print{body{padding:0}}</style></head><body>
     <div style="text-align:center;margin-bottom:20px">
-      <h1 style="color:#ac1414;margin:5px 0;font-size:1.8rem">Z|S</h1>
-      <h2 style="margin:5px 0;font-size:1.4rem">ZABAL STORE</h2>
-      <p style="margin:2px 0;color:#666">BODEGA ZABAL STORE</p>
-      <p style="margin:2px 0;color:#ac1414">3206394403 - 3187155292</p>
+      <h1 style="color:#331791;margin:5px 0;font-size:1.8rem">T|L</h1>
+      <h2 style="margin:5px 0;font-size:1.4rem">TECHLOVERS STORE</h2>
+      <p style="margin:2px 0;color:#666">BODEGA TECHLOVERS STORE</p>
+      <p style="margin:2px 0;color:#331791">3206394403 - 3187155292</p>
     </div>
     <div style="display:flex;justify-content:space-between;margin:20px auto;width:85%">
       <div style="width:48%">
-        <p style="margin:4px 0"><strong style="color:#ac1414">Fecha:</strong> ${data.fecha}</p>
-        <p style="margin:4px 0"><strong style="color:#ac1414">Referencia:</strong> ${data.referencia}</p>
-        <p style="margin:4px 0"><strong style="color:#ac1414">Cliente:</strong> ${data.cliente?.nombre || 'N/A'}</p>
-        <p style="margin:4px 0"><strong style="color:#ac1414">Almacén:</strong> ${data.almacen?.nombre || 'N/A'}</p>
-        <p style="margin:4px 0"><strong style="color:#ac1414">Encargado:</strong> ${data.almacen?.encargado || 'N/A'}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Fecha:</strong> ${data.fecha}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Referencia:</strong> ${data.referencia}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Cliente:</strong> ${data.cliente?.nombre || 'N/A'}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Almacén:</strong> ${data.almacen?.nombre || 'N/A'}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Encargado:</strong> ${data.almacen?.encargado || 'N/A'}</p>
       </div>
       <div style="width:48%">
-        <p style="margin:4px 0"><strong style="color:#ac1414">Ciudad:</strong> ${data.almacen?.ciudad || 'N/A'}</p>
-        <p style="margin:4px 0"><strong style="color:#ac1414">Barrio:</strong> ${data.almacen?.barrio || 'N/A'}</p>
-        <p style="margin:4px 0"><strong style="color:#ac1414">Dirección:</strong> ${data.almacen?.direccion || 'N/A'}</p>
-        <p style="margin:4px 0"><strong style="color:#ac1414">Teléfono:</strong> ${data.almacen?.telefono || 'N/A'}</p>
-        <p style="margin:4px 0"><strong style="color:#ac1414">Vendedor:</strong> ${data.encargado?.name || 'N/A'}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Ciudad:</strong> ${data.almacen?.ciudad || 'N/A'}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Barrio:</strong> ${data.almacen?.barrio || 'N/A'}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Dirección:</strong> ${data.almacen?.direccion || 'N/A'}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Teléfono:</strong> ${data.almacen?.telefono || 'N/A'}</p>
+        <p style="margin:4px 0"><strong style="color:#331791">Vendedor:</strong> ${data.encargado?.name || 'N/A'}</p>
       </div>
     </div>
     <table style="width:85%;margin:20px auto;border-collapse:collapse;font-size:13px">
       <thead>
-        <tr style="background:#ac1414;color:white">
+        <tr style="background:#331791;color:white">
           <th style="padding:10px;text-align:left">ITEM</th>
           <th style="padding:10px;text-align:left">REFERENCIA</th>
           <th style="padding:10px;text-align:left">DESCRIPCIÓN</th>
@@ -278,8 +278,8 @@ const executePrint = () => {
       </thead>
       <tbody>${productRows}</tbody>
     </table>
-    <div style="width:85%;margin:15px auto;border:2px solid #ac1414;padding:12px;display:flex;justify-content:space-between;align-items:center;border-radius:6px">
-      <span style="font-size:1.3rem;color:#ac1414;font-weight:bold">TOTAL</span>
+    <div style="width:85%;margin:15px auto;border:2px solid #331791;padding:12px;display:flex;justify-content:space-between;align-items:center;border-radius:6px">
+      <span style="font-size:1.3rem;color:#331791;font-weight:bold">TOTAL</span>
       <span style="font-size:1.3rem;font-weight:bold">${formatCurrency(data.total)}</span>
     </div>
     <div style="width:85%;margin:15px auto">

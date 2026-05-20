@@ -174,7 +174,7 @@ const membersList: Member[] = [
               class="me-2"
               size="20"
             />
-            <div>Public to Zabal Store</div>
+            <div>Public to Techlovers Store</div>
           </h6>
 
           <VBtn

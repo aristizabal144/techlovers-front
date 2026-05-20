@@ -267,7 +267,7 @@ const currentAbonosTab = ref(0)
                 </VDataTable>
                 
                 <div class="d-flex justify-end mt-4">
-                  <VAlert color="error" variant="tonal" class="w-100" style="max-width: 400px">
+                  <VAlert color="primary" variant="tonal" class="w-100" style="max-width: 400px">
                     <div class="d-flex justify-space-between align-center font-weight-bold text-h6">
                       <span>Total Gastos Efectivo:</span>
                       <span>{{ formatCurrency(dashboardStore.gastosEfectivo.total_gastos) }}</span>
@@ -294,7 +294,7 @@ const currentAbonosTab = ref(0)
                 </VDataTable>
 
                 <div class="d-flex justify-end mt-4">
-                  <VAlert color="error" variant="tonal" class="w-100" style="max-width: 400px">
+                  <VAlert color="primary" variant="tonal" class="w-100" style="max-width: 400px">
                     <div class="d-flex justify-space-between align-center font-weight-bold text-h6">
                       <span>Total Gastos Transf:</span>
                       <span>{{ formatCurrency(dashboardStore.gastosTransferencia.total_gastos) }}</span>
@@ -334,7 +334,7 @@ const currentAbonosTab = ref(0)
             </VDataTable>
             
             <div class="d-flex justify-end mt-4">
-               <VAlert color="error" variant="tonal" class="w-100" style="max-width: 400px">
+               <VAlert color="primary" variant="tonal" class="w-100" style="max-width: 400px">
                   <div class="d-flex justify-space-between align-center font-weight-bold">
                     <span>Total Efectivo:</span>
                     <span>{{ formatCurrency(dashboardStore.facturasEfectivoTotal) }}</span>
@@ -360,7 +360,7 @@ const currentAbonosTab = ref(0)
             </VDataTable>
 
             <div class="d-flex justify-end mt-4">
-               <VAlert color="error" variant="tonal" class="w-100" style="max-width: 400px">
+               <VAlert color="primary" variant="tonal" class="w-100" style="max-width: 400px">
                   <div class="d-flex justify-space-between align-center font-weight-bold">
                     <span>Total Transferencia:</span>
                     <span>{{ formatCurrency(dashboardStore.facturasTransferenciaTotal) }}</span>
@@ -390,7 +390,7 @@ const currentAbonosTab = ref(0)
             </VDataTable>
             
             <div class="d-flex justify-end mt-4">
-               <VAlert color="error" variant="tonal" class="w-100" style="max-width: 400px">
+               <VAlert color="primary" variant="tonal" class="w-100" style="max-width: 400px">
                   <div class="d-flex justify-space-between align-center font-weight-bold text-h6">
                     <span>Total Ventas:</span>
                     <span>{{ formatCurrency(dashboardStore.totalVentas) }}</span>
@@ -419,7 +419,7 @@ const currentAbonosTab = ref(0)
             </VDataTable>
 
             <div class="d-flex justify-end mt-4">
-               <VAlert color="error" variant="tonal" class="w-100">
+               <VAlert color="primary" variant="tonal" class="w-100">
                   <div class="d-flex justify-space-between align-center font-weight-bold text-h6">
                     <span>Total Vales:</span>
                     <span>{{ formatCurrency(dashboardStore.totalVales) }}</span>

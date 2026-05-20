@@ -351,7 +351,7 @@ onMounted(() => {
 
           <!-- Referencia -->
           <template #item.referencia="{ item }">
-            <span class="font-weight-medium text-caption">{{ item.referencia }}</span>
+            <span class="font-weight-bold text-caption text-primary">{{ item.referencia }}</span>
           </template>
 
           <!-- Nombre -->
@@ -465,7 +465,7 @@ onMounted(() => {
                             <h3 class="text-subtitle-1 font-weight-medium text-high-emphasis text-truncate mb-1" :title="item.nombre">
                                 {{ item.nombre }}
                             </h3>
-                            <div class="text-caption text-disabled mb-auto">
+                            <div class="text-caption font-weight-bold text-primary mb-auto">
                                 REF: {{ item.referencia }}
                             </div>
 

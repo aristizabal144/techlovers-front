@@ -1,6 +1,6 @@
-# vue
+# TechLovers Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend application for TechLovers store management system.
 
 ## Recommended IDE Setup
 

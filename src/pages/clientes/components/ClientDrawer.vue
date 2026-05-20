@@ -193,7 +193,7 @@ const handleFormSubmit = async () => {
             <VTextField
               v-model="formData.name"
               label="Razón Social / Nombre Completo"
-              placeholder="Ej. Transportes Zabal S.A.S"
+              placeholder="Ej. Transportes Techlovers S.A.S"
               :rules="[requiredValidator]"
               variant="outlined"
             />

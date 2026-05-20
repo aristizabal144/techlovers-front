@@ -467,7 +467,7 @@ onMounted(() => {
             <div class="d-flex align-center">
               <VAvatar
                 size="28"
-                color="error"
+                color="primary"
                 variant="tonal"
                 class="me-2"
               >

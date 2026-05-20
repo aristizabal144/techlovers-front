@@ -60,7 +60,7 @@ onMounted(() => {
           Catálogo Oficial
         </h1>
         <h2 class="text-h4 font-weight-bold mb-8 text-high-emphasis z-1 letter-spacing-2">
-          ZABAL STORE
+          TECHLOVERS STORE
         </h2>
         
         <div class="divider-ornament bg-primary mb-8 z-1"></div>
@@ -93,7 +93,7 @@ onMounted(() => {
           <img 
             :src="item.urlImagen && item.urlImagen.length > 30 ? item.urlImagen : 'https://placehold.co/800x800/eeeeee/999999?text=Sin+Imagen'" 
             class="item-img" 
-            alt="Producto Zabal"
+            alt="Producto Techlovers"
           />
         </div>
         <div class="item-details">

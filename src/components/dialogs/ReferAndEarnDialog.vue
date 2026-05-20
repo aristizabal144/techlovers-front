@@ -95,7 +95,7 @@ const referAndEarnSteps = [
         >
           <AppTextField
             placeholder="johnDoe@gmail.com"
-            label="Enter your friend's email address and invite them to join Zabal Store 😍"
+            label="Enter your friend's email address and invite them to join Techlovers Store 😍"
           />
 
           <VBtn
