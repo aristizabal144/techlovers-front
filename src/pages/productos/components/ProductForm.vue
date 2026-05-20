@@ -218,7 +218,7 @@ const submitForm = async () => {
         estado: formData.value.state ? 1 : 0,
         descripcion: formData.value.description,
         codigo_barras: formData.value.barCode,
-        imageAwsreal: `https://zabal-app-bucket.s3.amazonaws.com/${formData.value.reference}.jpg`,
+        imageAwsreal: `https://zabal-app-bucket.s3.us-east-1.amazonaws.com/TECHLOVERS-WEB/${formData.value.reference}.jpg`,
         urlImagen: formData.value.urlImagen || ''
       }
       if (finalImageAws) editPayload.imageAws = finalImageAws
@@ -241,12 +241,12 @@ const submitForm = async () => {
         amount_count: formData.value.amount_count,
         numberPageManifiests: formData.value.numberPageManifiests ? String(formData.value.numberPageManifiests) : null,
         state: formData.value.state ? 1 : 0,
-        imageAwsreal: `https://zabal-app-bucket.s3.amazonaws.com/${formData.value.reference}.jpg`,
+        imageAwsreal: `https://zabal-app-bucket.s3.us-east-1.amazonaws.com/TECHLOVERS-WEB/${formData.value.reference}.jpg`,
         urlImagen: formData.value.urlImagen || ''
       }
       if (finalImageAws) {
         createPayload.imageAws = finalImageAws
-        createPayload.urlImagen = `https://zabal-app-bucket.s3.amazonaws.com/${formData.value.reference}.jpg`
+        createPayload.urlImagen = `https://zabal-app-bucket.s3.us-east-1.amazonaws.com/TECHLOVERS-WEB/${formData.value.reference}.jpg`
         createPayload.imageAwsreal = createPayload.urlImagen
       }
       
