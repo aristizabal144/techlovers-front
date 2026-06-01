@@ -246,8 +246,9 @@ const executePrint = () => {
     <div style="text-align:center;margin-bottom:20px">
       <h1 style="color:#331791;margin:5px 0;font-size:1.8rem">T|L</h1>
       <h2 style="margin:5px 0;font-size:1.4rem">TECHLOVERS STORE</h2>
-      <p style="margin:2px 0;color:#666">BODEGA TECHLOVERS STORE</p>
-      <p style="margin:2px 0;color:#331791">3206394403 - 3187155292</p>
+      <p style="margin:2px 0;color:#666">TECH LOVERS SAS</p>
+      <p style="margin:2px 0;color:#666">NIT 902034057</p>
+      <p style="margin:2px 0;color:#331791">TELEFONO - 3217324582</p>
     </div>
     <div style="display:flex;justify-content:space-between;margin:20px auto;width:85%">
       <div style="width:48%">
@@ -287,14 +288,13 @@ const executePrint = () => {
     </div>
     <div style="width:85%;margin:15px auto;display:flex;justify-content:space-between;gap:20px;font-size:13px">
       <div style="width:48%">
-        <p style="margin:4px 0">NOTA: <span>PARA REALIZAR PAGOS FAVOR LLAMAR AL # <b>3187155292</b> O AL <b>3206394403</b></span></p>
+        <p style="margin:4px 0">NOTA: <span>PARA REALIZAR PAGOS FAVOR LLAMAR AL # <b>+57 321 7324582</b></span></p>
         <p style="margin:4px 0;color:red;font-size:12px">PASADOS LOS 45 DIAS LA FACTURA NO APLICA DESCUENTO</p>
       </div>
       <div style="width:48%">
         <p style="margin:4px 0"><b style="text-decoration:underline">ÚNICAS CUENTAS AUTORIZADAS</b></p>
         <p style="margin:4px 0"><b>Confirmar antes de realizar el pago</b></p>
-        <p style="margin:4px 0"><b>#95976272316</b> AHORROS BANCOLOMBIA SERGIO GIRALDO</p>
-        <p style="margin:4px 0"><b>#01400015399</b> AHORROS BANCOLOMBIA OMAR ARISTIZABAL</p>
+        <p style="margin:4px 0"><b>#00600011118</b> AHORROS BANCOLOMBIA</p>
       </div>
     </div>
     <div style="width:85%;margin:40px auto;display:flex;justify-content:space-between">
